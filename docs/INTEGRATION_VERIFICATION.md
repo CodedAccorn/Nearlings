@@ -56,22 +56,23 @@ Regardless of provider support, responses must be parsed and locally schema-vali
 
 ## Local toolchain audit
 
-Observed on 2026-11-10:
+Observed on 2026-11-11:
 
 - Git `2.56.0.windows.4`: available.
-- Node `v24.22.1`: available from the Codex runtime.
-- npm: unavailable on `PATH`.
-- Rust and Cargo: unavailable.
-- `cargo-near`: unavailable.
+- Node `v26.13.0`: installed under the user profile and added to the user `PATH`.
+- npm `11.20.0`: installed with Node.
+- Rust `1.97.1` and Cargo `1.97.1`: installed under the user profile and selected as the default toolchain.
+- `cargo-near`: installation attempted at pinned version `0.21.1`; blocked because the native Windows MSVC linker/build tools are absent.
 - WSL: not installed.
 
-Bootstrap remains blocked until a supported Node/npm installation and the Rust contract toolchain are installed. The official NEAR app guidance recommends WSL for Windows contract development. Installing WSL is a machine-level change and requires explicit approval.
+The official NEAR app guidance recommends WSL for Windows contract development. WSL installation was approved, but `wsl.exe --install -d Ubuntu --no-launch` could not enable the feature because this session lacks true Administrator elevation. Run that command from an Administrator PowerShell and restart Windows if requested. After Ubuntu initialization, install the pinned Rust and `cargo-near` toolchain inside WSL and use it for contract builds/tests. This avoids adding the multi-gigabyte Visual Studio C++ build tools solely for native contract compilation.
 
 ## Gate status
 
 - Official requirements captured: pass.
 - Architecture documented: ready for human approval.
 - Repository initialized: pass.
-- Reproducible application toolchain: blocked on npm, WSL, Rust, and `cargo-near` installation.
+- Reproducible frontend toolchain: pass for Node and npm; project bootstrap remains gated by architecture approval.
+- Reproducible contract toolchain: blocked on Administrator-enabled WSL/Ubuntu setup and `cargo-near` installation inside WSL.
 - Live NEAR AI verification: blocked on API credentials, credits, and spending approval.
 - Testnet contract verification: blocked until implementation and explicit deployment approval.
