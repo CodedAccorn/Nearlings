@@ -13,14 +13,13 @@ Verified against the live organizer instructions on 2026-11-14 at approximately 
 - [x] No secrets detected by the repository credential-pattern scan.
 - [x] Unimplemented NFT, wallet, live AI and continuous-inference behavior is not claimed.
 - [x] Clean local clone of commit `e7b13f7` passed frozen install, lint, typecheck, five tests and production build.
+- [x] Public repository published and anonymously verified: https://github.com/CodedAccorn/Nearlings
 
 ## Blocking submission
 
 - [ ] Decide whether this submission is the current demo under `open`, or whether to first add verifiable NEAR functionality. Do not select `nfts` based only on the simulated token display.
 - [ ] Record a short demo video because the demo is currently local-only; screenshots alone are insufficient for a local-only project.
 - [ ] Create or select the required **mainnet** NEAR payout account.
-- [ ] Create the GitHub repository, add it as a remote, push, and make it public. These actions require explicit human approval.
-- [ ] Confirm the public repository opens without authentication and includes the committed license and README.
 - [ ] Publish the human-authored X post with the video, `@NEARProtocol` and `#NEARHackathon`; obtain its public URL.
 - [ ] Provide and validate every submission field listed in `docs/SUBMISSION_PREP.md`.
 - [ ] Read and affirm the exact consent notice.

@@ -7,7 +7,7 @@ This file contains no private submission payload and must not be used as evidenc
 | Requirement | Current status | Evidence or action |
 |---|---|---|
 | Working prototype | Ready | Local Next.js demonstration; judge steps are in `README.md`. |
-| Public repository | Blocked | No Git remote is configured. Human approval is required before creation, push or publication. |
+| Public repository | Ready | Public `main` branch: https://github.com/CodedAccorn/Nearlings |
 | Reproducible setup | Ready, clean-clone retest pending | Locked pnpm install and verification commands are documented. |
 | License | Ready | MIT `LICENSE`. |
 | Concrete NEAR fit | At risk | NEAR identity/NFT and AI are represented but simulated. Submit to `open` unless verifiable NEAR functionality is added. |
