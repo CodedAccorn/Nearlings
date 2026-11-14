@@ -62,10 +62,10 @@ Observed on 2026-11-11:
 - Node `v26.13.0`: installed under the user profile and added to the user `PATH`.
 - npm `11.20.0`: installed with Node.
 - Rust `1.97.1` and Cargo `1.97.1`: installed under the user profile and selected as the default toolchain.
-- `cargo-near`: installation attempted at pinned version `0.21.1`; blocked because the native Windows MSVC linker/build tools are absent.
+- `cargo-near`: source compilation at pinned version `0.21.1` was blocked by missing native MSVC build tools. The official release also provides a prebuilt Windows x64 binary, so MSVC and WSL are not required merely to run `cargo-near`. Attempts through the official installer, npm wrapper and direct GitHub release asset stalled while fetching the binary; the tool remains unverified locally.
 - WSL: not installed.
 
-The official NEAR app guidance recommends WSL for Windows contract development. WSL installation was approved, but `wsl.exe --install -d Ubuntu --no-launch` could not enable the feature because this session lacks true Administrator elevation. Run that command from an Administrator PowerShell and restart Windows if requested. After Ubuntu initialization, install the pinned Rust and `cargo-near` toolchain inside WSL and use it for contract builds/tests. This avoids adding the multi-gigabyte Visual Studio C++ build tools solely for native contract compilation.
+The official NEAR app guidance recommends WSL for Windows contract development, but `cargo-near` itself supports a prebuilt Windows binary. WSL installation was approved; `wsl.exe --install -d Ubuntu --no-launch` could not enable the feature because this session lacks true Administrator elevation. WSL remains an optional fallback requiring an Administrator PowerShell and restart, not a blocker for the frontend demonstration.
 
 ## Gate status
 
@@ -73,6 +73,6 @@ The official NEAR app guidance recommends WSL for Windows contract development. 
 - Architecture documented: ready for human approval.
 - Repository initialized: pass.
 - Reproducible frontend toolchain: pass for Node and npm; project bootstrap remains gated by architecture approval.
-- Reproducible contract toolchain: blocked on Administrator-enabled WSL/Ubuntu setup and `cargo-near` installation inside WSL.
+- Reproducible contract toolchain: blocked on completing the official prebuilt `cargo-near` download or Administrator-enabled WSL/Ubuntu setup.
 - Live NEAR AI verification: blocked on API credentials, credits, and spending approval.
 - Testnet contract verification: blocked until implementation and explicit deployment approval.
