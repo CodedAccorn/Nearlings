@@ -8,9 +8,10 @@ export type Discovery = {
   eventDate: string | null;
   sourceUrl: string;
   sourceName: string;
-  verification: "Verified source" | "Reference";
+  verification: "Verified source" | "Reference" | "Live data required" | "Demo placement";
   archetypes: ArchetypeId[];
   sponsored?: boolean;
+  metric?: { label: string; value: string };
 };
 
 export const discoveries: Discovery[] = [
@@ -23,7 +24,7 @@ export const discoveries: Discovery[] = [
     sourceUrl: "https://nearhackathon.com/",
     sourceName: "NEAR Hackathon",
     verification: "Verified source",
-    archetypes: ["oracle", "hunter", "guardian"],
+    archetypes: ["oracle", "hunter"],
   },
   {
     id: "cargo-near-release",
@@ -34,7 +35,7 @@ export const discoveries: Discovery[] = [
     sourceUrl: "https://github.com/near/cargo-near/releases/tag/cargo-near-v0.23.0",
     sourceName: "near/cargo-near",
     verification: "Verified source",
-    archetypes: ["hunter", "sage"],
+    archetypes: ["hunter"],
   },
   {
     id: "near-ai-docs",
@@ -45,7 +46,7 @@ export const discoveries: Discovery[] = [
     sourceUrl: "https://docs.near.ai/cloud/quickstart",
     sourceName: "NEAR AI documentation",
     verification: "Reference",
-    archetypes: ["sage", "guardian", "hunter"],
+    archetypes: ["guardian"],
   },
   {
     id: "nep-171-standard",
@@ -56,7 +57,7 @@ export const discoveries: Discovery[] = [
     sourceUrl: "https://github.com/near/NEPs/blob/master/neps/nep-0171.md",
     sourceName: "NEAR Enhancement Proposals",
     verification: "Reference",
-    archetypes: ["sage", "guardian"],
+    archetypes: ["guardian"],
   },
   {
     id: "demo-grant",
@@ -69,6 +70,55 @@ export const discoveries: Discovery[] = [
     verification: "Reference",
     archetypes: ["hunter", "oracle"],
     sponsored: true,
+  },
+  {
+    id: "pendle-susdai-fixed",
+    title: "sUSDai fixed-yield market",
+    summary: "A Sage category for comparing principal-token fixed yield with maturity context. Rates stay withheld until a live adapter supplies a timestamped value.",
+    category: "Fixed yield",
+    eventDate: "2027-02-25",
+    sourceUrl: "https://app.pendle.finance/earn/fixed-yield",
+    sourceName: "Pendle Markets",
+    verification: "Live data required",
+    archetypes: ["sage"],
+    metric: { label: "Fixed APY", value: "Connect live rate" },
+  },
+  {
+    id: "aave-usdc-supply",
+    title: "Aave USDC lending-rate monitor",
+    summary: "A lending signal should show supply APY, utilization and risk context together. This demonstrates the category without freezing a changing rate into the demo.",
+    category: "Lending rate",
+    eventDate: null,
+    sourceUrl: "https://app.aave.com/markets/",
+    sourceName: "Aave Markets",
+    verification: "Live data required",
+    archetypes: ["sage"],
+    metric: { label: "Supply APY", value: "Connect live rate" },
+  },
+  {
+    id: "ena-sponsored-market",
+    title: "ENA market briefing",
+    summary: "An illustrative paid placement showing how a market campaign stays visibly sponsored while entering the same relevance and provenance pipeline as organic content.",
+    category: "Sponsored market",
+    eventDate: null,
+    sourceUrl: "https://www.ethena.fi/",
+    sourceName: "Ethena",
+    verification: "Demo placement",
+    archetypes: ["sage"],
+    sponsored: true,
+    metric: { label: "Commercial status", value: "Sponsored demo" },
+  },
+  {
+    id: "pendle-expiry-watch",
+    title: "Expiry watch: sUSDai maturity",
+    summary: "The same market record becomes a calendar event so Sage can surface approaching maturity separately from general feed relevance.",
+    category: "Expiry market",
+    eventDate: "2027-02-25",
+    sourceUrl: "https://app.pendle.finance/trade/markets",
+    sourceName: "Pendle Markets",
+    verification: "Reference",
+    archetypes: ["sage"],
+    metric: { label: "Maturity", value: "25 Feb 2027" },
   },
 ];
 

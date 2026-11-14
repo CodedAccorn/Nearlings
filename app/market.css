@@ -1,0 +1,21 @@
+.marketMetric {
+  align-items: end;
+  background: #ebe7dc;
+  border-left: 3px solid var(--accent);
+  display: flex;
+  justify-content: space-between;
+  margin: 16px 0;
+  padding: 13px;
+}
+
+.marketMetric span {
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.marketMetric strong {
+  color: var(--ink);
+  font: 17px Georgia;
+}

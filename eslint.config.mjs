@@ -2,7 +2,7 @@ import js from "@eslint/js";
 import tsParser from "@typescript-eslint/parser";
 
 export default [
-  { ignores: [".next/**", "coverage/**", "node_modules/**", "next-env.d.ts"] },
+  { ignores: [".next/**", "coverage/**", "node_modules/**", "tmp/**", "next-env.d.ts"] },
   js.configs.recommended,
   {
     files: ["**/*.ts", "**/*.tsx"],

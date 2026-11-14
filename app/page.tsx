@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { archetypes, getArchetype, type ArchetypeId } from "../lib/archetypes";
-import { discoveries, discoveriesFor } from "../lib/discovery";
+import { discoveriesFor } from "../lib/discovery";
 import {
   consumeSuccessfulInference,
   demoInference,
@@ -37,7 +37,7 @@ export default function Home() {
 
   const archetype = getArchetype(selected);
   const relevant = useMemo(() => discoveriesFor(selected), [selected]);
-  const dated = discoveries.filter((item) => item.eventDate);
+  const dated = relevant.filter((item) => item.eventDate);
 
   function talk(key = `demo-${selected}-${message.trim().toLowerCase()}`) {
     try {
@@ -107,6 +107,7 @@ export default function Home() {
             {relevant.map((item) => <article className="discoveryCard" key={item.id}>
               <div className="cardMeta"><span>{item.category}</span>{item.sponsored && <b>SPONSORED · DEMO PLACEMENT</b>}</div>
               <h4>{item.title}</h4><p>{item.summary}</p>
+              {item.metric && <div className="marketMetric"><span>{item.metric.label}</span><strong>{item.metric.value}</strong></div>}
               <div className="sourceRow"><span>{item.verification}</span><a href={item.sourceUrl} target="_blank" rel="noreferrer">{item.sourceName} ↗</a></div>
             </article>)}
           </div>

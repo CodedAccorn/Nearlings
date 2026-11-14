@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./market.css";
 
 export const metadata: Metadata = {
   title: "Nearlings — companion intelligence",
