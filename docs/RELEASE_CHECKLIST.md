@@ -12,11 +12,11 @@ Verified against the live organizer instructions on 2026-11-14 at approximately 
 - [x] Judge walkthrough, dependencies, limitations and track recommendation documented.
 - [x] No secrets detected by the repository credential-pattern scan.
 - [x] Unimplemented NFT, wallet, live AI and continuous-inference behavior is not claimed.
+- [x] Clean local clone of commit `e7b13f7` passed frozen install, lint, typecheck, five tests and production build.
 
 ## Blocking submission
 
 - [ ] Decide whether this submission is the current demo under `open`, or whether to first add verifiable NEAR functionality. Do not select `nfts` based only on the simulated token display.
-- [ ] Perform a clean-clone verification on a separate directory/machine and capture output.
 - [ ] Record a short demo video because the demo is currently local-only; screenshots alone are insufficient for a local-only project.
 - [ ] Create or select the required **mainnet** NEAR payout account.
 - [ ] Create the GitHub repository, add it as a remote, push, and make it public. These actions require explicit human approval.
